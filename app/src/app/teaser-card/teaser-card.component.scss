@@ -1,0 +1,60 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column;
+    justify-content: flex-start;
+    max-width: 75rem;
+    margin: 1.25rem auto;
+}
+
+.dropdown {
+    margin-bottom: 15px;
+}
+
+.border {
+    border-left: 2px solid #898782;
+    padding-left: 0.5rem;
+}
+
+.title {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.article {
+    margin-top: 8px;
+}
+
+.heart-content {
+    display: flex;
+    flex-flow: wrap;
+}
+
+.heart {
+    width: 32px;
+    height: 32px;
+    margin-left: 3px;
+    z-index: 5;
+
+    &-transparent {
+        opacity: 0.2;
+    }
+}
+
+.image {
+    max-width: 290px;
+    margin-top: -18px;
+}
+
+.text {
+    max-width: 290px;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 16px;
+}
+
+.fontsize {
+    font-size: 28px;
+}
+
