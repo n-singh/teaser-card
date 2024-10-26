@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'FlamaSemicond';
+    src: url('./assets/fonts/FlamaSemicond-Bold-Pol.woff2') format('truetype');
+}
+
+@font-face {
+    font-family: 'CapitoliumSemibold';
+    src: url('./assets/fonts/CapitoliumSemibold.woff2') format('truetype');
+}
+
+.title {
+    font-family: 'FlamaSemicond';
+}
+
+.text {
+    font-family: 'CapitoliumSemibold';
+}
