@@ -2,12 +2,12 @@
     <app-dropdown class="dropdown" (fontSizeOption)="fontSizeOption($event)"></app-dropdown>
 
     <article>
-        <div>
+        <div class="section-content">
             <span class="border"></span>
-            <span class="title"> {{title}} </span>
+            <span class="section"> {{section}} </span>
         </div>
         
-        @for (item of articles; track item.id) {
+        @for (item of article; track item.id) {
             <div class="article">
                 <div class="heart-content">
                     <div class="heart" *ngFor="let item of [].constructor(item.rating.score); let i = index">
@@ -15,13 +15,13 @@
                     </div>
 
                     <div class="heart" *ngFor="let item of [].constructor(transparentHearts); let i = index">
-                        <img class="heart heart-transparent" src="../../assets/image/heart.svg" alt="heart">
+                        <img class="heart-transparent" src="../../assets/image/heart.svg" alt="heart">
                     </div>
                 </div>
     
                 <img class="image" src="{{item.image.link.url}}" alt="music">
     
-                <div class="text" [style.fontSize]="fontSize"> {{item.title}} </div>
+                <div class="title" [style.fontSize]="fontSize"> {{item.title}} </div>
             </div>
         }
     </article>

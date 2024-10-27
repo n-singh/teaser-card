@@ -12,7 +12,6 @@ import { NgFor } from '@angular/common';
 })
 
 export class DropdownComponent {
-  public title: string | undefined;
   public teaserOptions: Array<TeaserOptions> | undefined;
   @Output() fontSizeOption = new EventEmitter<string>();
 

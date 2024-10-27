@@ -5,14 +5,14 @@ export interface Article {
     rating: Rating;
 }
 
-export interface Image {
+interface Image {
     link: Link;
 }
 
-export interface Link {
+interface Link {
     url: string;
 }
 
-export interface Rating {
+interface Rating {
     score: number;
 }

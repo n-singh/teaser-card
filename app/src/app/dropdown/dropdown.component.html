@@ -1,5 +1,5 @@
-<label for="fontsize">Select font size:</label>
-<select class="dropdown" (change)="onChange($event)">
+<label for="teaserOptions">Select font size:</label>
+<select id="teaserOptions" class="dropdown" (change)="onChange($event)">
     <option *ngFor="let option of teaserOptions" [value]="option.fontSizeOption">
         {{option.id}} 
     </option>

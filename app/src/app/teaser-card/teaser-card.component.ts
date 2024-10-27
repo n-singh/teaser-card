@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as data from '../../assets/json/teaserData.json';
 import { Article } from '../models/article';
 import { DropdownComponent } from "../dropdown/dropdown.component";
@@ -13,29 +13,32 @@ import { NgFor } from '@angular/common';
 })
 
 export class TeaserCardComponent implements OnInit {
-    public title: string | undefined;
-    public articles: Array<Article> | undefined;
+    public section: string | undefined;
+    public article: Array<Article> | undefined;
     public transparentHearts = 0;
     public fontSize = '';
   
     ngOnInit(): void {
-        this.title = data.stamp?.section?.title;
-        this.articles = [data.article];
+        this.section = data.stamp?.section?.title;
 
-        this.heartNumberCount()
+        let article: Array<Article> = [data.article];
+        this.article = article;
+
+        this.transparentHeartNumberCount()
     }
 
-    heartNumberCount() {
-        const item = this.articles?.find(x => x);
-        if (item) {
-            const score = item.rating.score;
+    transparentHeartNumberCount() {
+        const article = this.article?.find(x => x.id);
+
+        if (article) {
+            const score = article.rating.score;
             if (score <= 6) {
                 this.transparentHearts = 6 - score;
             }
         }
     }
 
-    fontSizeOption(value: any) {
+    fontSizeOption(value: string) {
         this.fontSize = value;
     }
 }
