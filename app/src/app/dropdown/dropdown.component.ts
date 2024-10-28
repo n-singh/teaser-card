@@ -17,6 +17,14 @@ export class DropdownComponent {
 
   ngOnInit(): void {
     this.teaserOptions = data.teaserOptions;
+
+    this.selectedTeaserOption();
+  }
+
+  selectedTeaserOption() {
+    if (this.teaserOptions) {
+      this.fontSizeOption.emit(this.teaserOptions[0].fontSizeOption);
+    }
   }
 
   onChange(value: any) { 
