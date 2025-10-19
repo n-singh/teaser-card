@@ -15,7 +15,7 @@ import { NgFor } from '@angular/common';
 export class TeaserCardComponent implements OnInit {
     public section: string | undefined;
     public article: Array<Article> | undefined;
-    public transparentHearts = 0;
+    public maxScore = 6;
     public fontSize = '';
   
     ngOnInit(): void {
@@ -24,18 +24,18 @@ export class TeaserCardComponent implements OnInit {
         let article: Array<Article> = [data.article];
         this.article = article;
 
-        this.transparentHeartNumberCount()
+        this.getHeartStatus();
     }
 
-    transparentHeartNumberCount() {
+    getHeartStatus() {
         const article = this.article?.find(x => x.id);
+        if (!article) return { filledHearts: 0, transparentHearts: this.maxScore };
 
-        if (article) {
-            const score = article.rating.score;
-            if (score <= 6) {
-                this.transparentHearts = 6 - score;
-            }
-        }
+        const score = article.rating.score;
+        const filledHearts = Math.min(score, this.maxScore);
+        const transparentHearts = Math.max(this.maxScore - score, 0);
+
+        return { filledHearts, transparentHearts };
     }
 
     fontSizeOption(value: string) {
